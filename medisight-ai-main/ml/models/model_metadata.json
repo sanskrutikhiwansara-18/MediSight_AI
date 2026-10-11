@@ -1,0 +1,28 @@
+{
+  "version": "xgb-synthea-v1-20261010075833",
+  "trained_at": "2026-10-10T07:58:33.680341+00:00",
+  "feature_names": [
+    "age",
+    "is_male",
+    "num_active_conditions",
+    "num_visits_last_year",
+    "num_prescriptions",
+    "abnormal_lab_ratio",
+    "has_diabetes",
+    "has_hypertension",
+    "has_heart_disease",
+    "latest_glucose",
+    "latest_systolic_bp"
+  ],
+  "metrics": {
+    "accuracy": 0.6768,
+    "precision": 0.7921,
+    "recall": 0.6846,
+    "f1": 0.7344,
+    "roc_auc": 0.7389,
+    "n_train": 23190,
+    "n_test": 7731
+  },
+  "dataset": "synthea-30921 (pop1 + pop2, Synthea-generated synthetic patients; label = real Synthea encounter history, future inpatient/ER utilization, not a fabricated heuristic)",
+  "n_samples": 30921
+}

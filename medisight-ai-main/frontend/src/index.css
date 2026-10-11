@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    background-image:
+      radial-gradient(900px 520px at 88% -8%, rgba(232, 176, 182, 0.55), transparent 62%),
+      radial-gradient(700px 420px at -6% 4%, rgba(246, 219, 218, 0.9), transparent 60%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    @apply bg-blush-100 text-ink-800 transition-colors duration-150;
+  }
+  .dark body {
+    background-image:
+      radial-gradient(900px 520px at 88% -8%, rgba(122, 26, 54, 0.35), transparent 62%),
+      radial-gradient(700px 420px at -6% 4%, rgba(38, 20, 26, 0.9), transparent 60%);
+    @apply bg-ink-950 text-blush-100;
+  }
+  :focus-visible {
+    outline: 2px solid #9a2445;
+    outline-offset: 2px;
+    border-radius: 0.5rem;
+  }
+  .dark :focus-visible {
+    outline-color: #e6a6ad;
+  }
+  ::selection {
+    background: #f1cdd1;
+    color: #3f0c1c;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-colors duration-150 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply btn bg-wine-700 text-white shadow-soft hover:bg-wine-800;
+  }
+  .btn-rose {
+    @apply btn bg-wine-400 text-white hover:bg-wine-500;
+  }
+  .btn-outline {
+    @apply btn border border-wine-200 bg-white/70 text-wine-800 hover:bg-white dark:border-ink-600 dark:bg-ink-800/70 dark:text-blush-100 dark:hover:bg-ink-700;
+  }
+  .btn-dark {
+    @apply btn bg-ink-900 text-white hover:bg-ink-800;
+  }
+  .btn-sm {
+    @apply px-3.5 py-1.5 text-xs;
+  }
+
+  .card {
+    @apply rounded-2xl border border-wine-100 bg-white shadow-soft dark:border-ink-700 dark:bg-ink-800;
+  }
+
+  .label {
+    @apply mb-1.5 block text-sm font-semibold text-ink-700 dark:text-blush-200;
+  }
+  .field {
+    @apply w-full rounded-xl border border-wine-200 bg-white px-4 py-3 text-sm text-ink-900 placeholder:text-ink-300 transition focus:border-wine-500 focus:outline-none focus:ring-2 focus:ring-wine-500/20 dark:border-ink-600 dark:bg-ink-900 dark:text-blush-50 dark:placeholder:text-ink-500;
+  }
+
+  .alert-error {
+  @apply rounded-xl border border-red-500/25 bg-red-50 px-4 py-3 text-sm text-red-700 dark:bg-red-500/10 dark:text-red-300;
+}
+
+  .table-head {
+    @apply border-b border-wine-100 text-left text-xs font-semibold text-ink-500 dark:border-ink-700 dark:text-ink-400;
+  }
+}

@@ -1,0 +1,28 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node
+node_modules/
+dist/
+
+# Databases
+*.db
+*.sqlite3
+
+# Sensitive patient data
+medisight-ai-main/backend/scripts/data/patient_logins.csv
+
+# Model files
+*.joblib
+
+# OS files
+.DS_Store
+Thumbs.db

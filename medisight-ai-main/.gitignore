@@ -1,0 +1,31 @@
+# Secrets
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# DB
+*.db
+*.sqlite3
+
+# Node
+node_modules/
+dist/
+frontend/.vite/
+
+# ML artifacts (regeneratable; keep repo small)
+ml/models/*.joblib
+!ml/models/.gitkeep
+
+# Restricted data - NEVER commit real MIMIC-IV data
+ml/data/mimic-iv/
+ml/data/*.csv
+!ml/data/.gitkeep
+
+# OS
+.DS_Store
